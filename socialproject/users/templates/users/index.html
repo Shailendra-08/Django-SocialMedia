@@ -1,0 +1,48 @@
+{% extends 'users/base.html' %}
+{% load static %}
+{% block body%}
+
+
+<div class="flex justify-center mt-5 p-10 font-bold ">
+    <h2 class="text-3xl mb-2 text-gray-500">My Posts</h2>
+</div>
+
+<div class="grid mx-80 p-10 grid-cols-1">
+    {% for post in posts %}
+
+    <a href="">
+        <div class="user-container flex mx-5 my-5">
+            <img class="h-12 w-12 mr-4" src="{{profile.photo.url}}" alt="">
+            <div class="mx-2 my-2 font-bold"> <span class="text-blue-500"> {{post.user}}</span></div>
+
+        </div>
+
+        <div class="rounded overflow-hidden w-[470px] h-[470px]">
+            <img src="{{post.image.url}}" alt="post image{{post.user}}">
+        </div>
+
+        <div class="px-6 py-4 ">
+            <div class="icon-container flex gap-3">
+                <img class="h-8 w-9 mr-4" src="{% static 'users/images/new.png' %}" alt="Like button">
+                <img class="h-8 w-8 mr-4" src="{% static 'users/images/comment.png' %}" alt="Like button">
+                <img class="h-8 w-8 mr-4" src="{% static 'users/images/share.png' %}" alt="Like button">
+
+            </div>
+        </div>
+
+
+        <div class="px-6 py-4 ">
+            <div class="font-bold text-xl mb-2">{{post.title}}</div>
+            <p>{{post.caption}}</p>
+            
+        </div>
+     
+    </a>
+
+
+    {% endfor %}
+</div>
+
+
+{% endblock%}
+

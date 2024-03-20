@@ -1,0 +1,60 @@
+{% extends 'users/base.html' %}
+{% block body %}
+
+<h3 class="text-2xl m-10 font-bold">Create a Post</h3>
+
+<div class="container my-5 mx-10">
+
+
+    <form method="post" enctype="multipart/form-data">
+
+        <!-- we use enctype = "multipart/form-data" because we area taking imaage as an input-->
+        {% csrf_token %}
+
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Add a Title</label>
+
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700">
+
+                {{form.title}}
+
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Upload Image</label>
+
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700">
+
+                {{form.image}}
+
+            </div>
+        </div>
+
+        <div class="mb-2">
+            <label class="block text-gray-700 text-sm font-bold mb-2" for="">Add Caption</label>
+
+            <div class="shadow appearance-none border rounded py-2 px-3 mr-10 text-gray-700">
+
+                {{form.caption}}
+
+            </div>
+        </div>
+
+<button type="submit" class="bg-green-500 mx-5 my-2 p-3 rounded text-white">Submit</button>
+
+
+</div>
+
+</form>
+
+
+
+
+
+
+
+
+</div>
+
+{% endblock %}
